@@ -1,6 +1,6 @@
 function initialize() {
 		// création de la carte et paramétrage général : centre et niveau de zoom
-        var map = L.map('mapid').setView([48.862162, 2.345818], 12);
+        var map = L.map('mapid').setView([50.102022, 1.825931], 12);
  
 		// création d'une couche "osmLayer"
         var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
@@ -21,8 +21,8 @@ function initialize() {
         map.addLayer(watercolorLayer);
 		
 		// création d'une couche geoJson qui appelle le fichier "arrondissement.geojson"			
-		var arrondissement = $.getJSON("arrondissement.geojson",function(dataArrondissement)
-					{L.geoJson( dataArrondissement, 
+		var arrondissement = $.getJSON("pnr_perim.geojson",function(dataPnr)
+					{L.geoJson( dataPnr, 
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "arrondissement"
