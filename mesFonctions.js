@@ -11,14 +11,7 @@ function initialize() {
 		// la couche "osmLayer" est ajoutée à la carte		
         map.addLayer(osmLayer);
 		
-		// création d'une couche "watercolorLayer"
-        var watercolorLayer = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
-            attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19
-        });
 		 
-		// la couche "watercolorLayer" est ajoutée à la carte			 
-        map.addLayer(watercolorLayer);
 		
 		// création d'une couche geoJson qui appelle le fichier "arrondissement.geojson"			
 		var arrondissement = $.getJSON("pnr_perim.geojson",function(dataPnr)
@@ -31,7 +24,7 @@ function initialize() {
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "arrondissement"	
-				layer.bindPopup( "<b><u>Description de l'arrondissement</u></b><br><b> Arrondissement n° </b>" + feature.properties.c_ar )
+				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.c_ar + "<b> communes adhérentes</b>" )
 				}
 		}).addTo(map);
 		});
