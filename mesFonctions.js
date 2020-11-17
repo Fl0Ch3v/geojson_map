@@ -13,12 +13,12 @@ function initialize() {
 		
 		 
 		
-		// création d'une couche geoJson qui appelle le fichier "arrondissement.geojson"			
+		// création d'une couche geoJson qui appelle le fichier "pnr_perim.geojson"			
 		var arrondissement = $.getJSON("pnr_perim.geojson",function(dataPnr)
 					{L.geoJson( dataPnr, 
 						{style: function(feature)
 							{	
-							// paramétrage de la symbologie de la couche "arrondissement"
+							// paramétrage de la symbologie de la couche "pnr_perim"
 							return { color: "#046380", weight: 1, fillColor: '#4BB5C1', fillOpacity: .5 };
 							},
 		onEachFeature: function( feature, layer )
