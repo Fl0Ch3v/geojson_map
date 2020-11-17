@@ -34,7 +34,7 @@ function initialize() {
 										// icone Clap	
 										{var iconeCinema = L.icon({
 													iconUrl: 'style/boussole.png',
-													iconSize: [19, 21]
+													iconSize: [32, 32]
 																	});
 		// fon ction pointToLayer qui ajoute la couche "cinema" à la carte, selon la symbologie "iconeCinema", et paramètre la popup
 		L.geoJson(dataPoint,{
