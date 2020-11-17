@@ -41,7 +41,7 @@ function initialize() {
 			pointToLayer: function(feature,latlng){
 				var marker = L.marker(latlng,{icon: iconeCinema});
 				marker.bindPopup('<b><u>Description du point</u></b><br>'
-							   + "<b>Nom : </b>" + feature.properties.nom_etabli+ '<br>' 
+							   + "<b>Nom : </b>" + feature.properties.id+ '<br>' 
 							   + "<b>Nombre d'écrans : </b>" + feature.properties.ecrans+ '<br>' 
 							   + "<b>Nombre de fauteuils : </b>" + feature.properties.fauteuils+ '<br>'
 							   + "<b>Arts et essais ? </b>" + feature.properties.art_et_ess+ '<br>'
