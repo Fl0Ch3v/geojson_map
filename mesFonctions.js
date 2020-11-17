@@ -33,7 +33,7 @@ function initialize() {
 		var cinema= $.getJSON("test_point.geojson",function(dataPoint)
 										// icone Clap	
 										{var iconeCinema = L.icon({
-													iconUrl: 'style/Clap.png',
+													iconUrl: 'style/boussole.png',
 													iconSize: [19, 21]
 																	});
 		// fon ction pointToLayer qui ajoute la couche "cinema" à la carte, selon la symbologie "iconeCinema", et paramètre la popup
