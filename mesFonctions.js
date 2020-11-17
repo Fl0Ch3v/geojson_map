@@ -13,12 +13,12 @@ function initialize() {
 		
 		 
 		
-		// création d'une couche geoJson qui appelle le fichier "pnr_perim.geojson"			
+		// création d'une couche geoJson qui appelle le fichier "arrondissement.geojson"			
 		var arrondissement = $.getJSON("pnr_perim.geojson",function(dataPnr)
 					{L.geoJson( dataPnr, 
 						{style: function(feature)
 							{	
-							// paramétrage de la symbologie de la couche "pnr_perim"
+							// paramétrage de la symbologie de la couche "arrondissement"
 							return { color: "#046380", weight: 1, fillColor: '#4BB5C1', fillOpacity: .5 };
 							},
 		onEachFeature: function( feature, layer )
@@ -30,17 +30,17 @@ function initialize() {
 		});
 															
 		// création d'une couche geoJson qui appelle le fichier "cinema.geojson"													
-		var cinema= $.getJSON("cinema.geojson",function(dataCinema)
+		var cinema= $.getJSON("test_point.geojson",function(dataPoint)
 										// icone Clap	
 										{var iconeCinema = L.icon({
 													iconUrl: 'style/Clap.png',
 													iconSize: [19, 21]
 																	});
 		// fon ction pointToLayer qui ajoute la couche "cinema" à la carte, selon la symbologie "iconeCinema", et paramètre la popup
-		L.geoJson(dataCinema,{
+		L.geoJson(dataPoint,{
 			pointToLayer: function(feature,latlng){
 				var marker = L.marker(latlng,{icon: iconeCinema});
-				marker.bindPopup('<b><u>Description du cinéma</u></b><br>'
+				marker.bindPopup('<b><u>Description du point</u></b><br>'
 							   + "<b>Nom : </b>" + feature.properties.nom_etabli+ '<br>' 
 							   + "<b>Nombre d'écrans : </b>" + feature.properties.ecrans+ '<br>' 
 							   + "<b>Nombre de fauteuils : </b>" + feature.properties.fauteuils+ '<br>'
