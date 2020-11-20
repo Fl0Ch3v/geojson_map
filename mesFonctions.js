@@ -27,7 +27,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "pnr"
-							return { color: "#046380", weight: 2, fillColor: '#4BB5C1', fillOpacity: 0 };
+							return { color: "#00997a", weight: 3, fillColor: '#00997a', fillOpacity: 0 };
 							},
 		onEachFeature: function( feature, layer )
 				{
@@ -43,7 +43,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "pah"
-							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .3 };
+							return { color: "#319098", weight: 0, fillColor: '#319098', fillOpacity: .3 };
 							},
 		onEachFeature: function( feature, layer )
 				{
@@ -76,12 +76,12 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "com_proj"
-							return { color: "LightCoral", weight: 1.2, fillColor: 'LightCoral', fillOpacity: .5 };
+							return { color: "LightCoral", weight: 1.3, fillColor: 'LightCoral', fillOpacity: .5 };
 							},
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "com_proj"	
-				layer.bindPopup(  '<b>'+ feature.properties.nom + '</b><br>'+ feature.properties.nb_projet + " projets patrimoine")
+				layer.bindPopup(  '<b>'+ feature.properties.nom + '</b><br>'+ feature.properties.nb_projet + " projet(s) patrimoine")
 				}
 		}).addTo(map);
 		});
