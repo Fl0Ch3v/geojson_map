@@ -73,8 +73,7 @@ function initialize() {
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "com_proj"	
-				layer.bindPopup(  '<b>'+ feature.properties.nom + '</b><br>'+
-									feature.properties.nb_projets + " projets patrimoine")
+				layer.bindPopup(  '<b>'+ feature.properties.nom + '</b><br>'+ feature.properties.nb_projet + " projets patrimoine")
 				}
 		}).addTo(map);
 		});
