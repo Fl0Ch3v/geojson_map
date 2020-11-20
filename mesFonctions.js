@@ -76,7 +76,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "com_proj"
-							return { color: "LightCoral", weight: 1.3, fillColor: 'LightCoral', fillOpacity: .5 };
+							return { color: "LightCoral", weight: 2, fillColor: 'LightCoral', fillOpacity: .5 };
 							},
 		onEachFeature: function( feature, layer )
 				{
