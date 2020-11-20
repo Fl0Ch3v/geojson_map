@@ -35,7 +35,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "pah"
-							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .3 };
 							},
 		onEachFeature: function( feature, layer )
 				{
