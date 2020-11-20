@@ -24,7 +24,23 @@ function initialize() {
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "pnr"	
-				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.c_ar + "<b> communes adhérentes</b>" )
+				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.nb_com + "<b> communes adhérentes</b>" )
+				}
+		}).addTo(map);
+		});
+
+		// création d'une couche geoJson qui appelle le fichier "pah_perim.geojson"			
+		var pah = $.getJSON("pah_perim.geojson",function(dataPah)
+					{L.geoJson( dataPah, 
+						{style: function(feature)
+							{	
+							// paramétrage de la symbologie de la couche "pah"
+							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							},
+		onEachFeature: function( feature, layer )
+				{
+				// paramétrage de la popup de la couche "pah"	
+				layer.bindPopup( "<b><u>Pays d'Art et d'Histoire</u></b><br><b><u>Ponthieu - Baie de Somme</u></b><br>")
 				}
 		}).addTo(map);
 		});
