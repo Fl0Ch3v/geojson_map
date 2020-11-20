@@ -44,6 +44,56 @@ function initialize() {
 				}
 		}).addTo(map);
 		});
+
+		// création d'une couche geoJson qui appelle le fichier "com_sans_proj.geojson"			
+		var com = $.getJSON("com_sans_proj.geojson",function(dataCom)
+					{L.geoJson( dataCom, 
+						{style: function(feature)
+							{	
+							// paramétrage de la symbologie de la couche "com"
+							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							},
+		onEachFeature: function( feature, layer )
+				{
+				// paramétrage de la popup de la couche "com"	
+				layer.bindPopup( '<b>'+ feature.properties.nom + '</b>')
+				}
+		}).addTo(map);
+		});
+
+
+		// création d'une couche geoJson qui appelle le fichier "com4_projets_pat.geojson"			
+		var com_proj = $.getJSON("com4_projets_pat.geojson",function(dataComProj)
+					{L.geoJson( dataComProj, 
+						{style: function(feature)
+							{	
+							// paramétrage de la symbologie de la couche "com_proj"
+							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							},
+		onEachFeature: function( feature, layer )
+				{
+				// paramétrage de la popup de la couche "com_proj"	
+				layer.bindPopup(  '<b>'+ feature.properties.nom + '</b><br>'+
+									feature.properties.nb_projets + " projets patrimoine")
+				}
+		}).addTo(map);
+		});
+
+		// création d'une couche geoJson qui appelle le fichier "pah_perim.geojson"			
+		var pah = $.getJSON("pah_perim.geojson",function(dataPah)
+					{L.geoJson( dataPah, 
+						{style: function(feature)
+							{	
+							// paramétrage de la symbologie de la couche "pah"
+							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							},
+		onEachFeature: function( feature, layer )
+				{
+				// paramétrage de la popup de la couche "pah"	
+				layer.bindPopup( "<b>Pays d'Art et d'Histoire</b><br><b>Ponthieu - Baie de Somme</b>")
+				}
+		}).addTo(map);
+		});
 															
 		// création d'une couche geoJson qui appelle le fichier "projet_pat.geojson"													
 		var projets= $.getJSON("test_point.geojson",function(dataPoint)
