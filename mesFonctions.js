@@ -19,7 +19,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "pnr"
-							return { color: "#046380", weight: 1, fillColor: '#4BB5C1', fillOpacity: .5 };
+							return { color: "#046380", weight: 2, fillColor: '#4BB5C1', fillOpacity: 0 };
 							},
 		onEachFeature: function( feature, layer )
 				{
