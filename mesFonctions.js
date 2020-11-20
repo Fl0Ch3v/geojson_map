@@ -81,11 +81,6 @@ function initialize() {
 							// paramétrage de la symbologie de la couche "pnr"
 							return { color: "#00997a", weight: 3, fillColor: '#00997a', fillOpacity: 0 };
 							},
-		onEachFeature: function( feature, layer )
-				{
-				// paramétrage de la popup de la couche "pnr"	
-				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.nb_com + " communes adhérentes<br>" + feature.properties.area_ha + " hectares" )
-				}
 		}).addTo(map);
 		});		
 
