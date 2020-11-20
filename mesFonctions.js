@@ -13,33 +13,33 @@ function initialize() {
 		
 		 
 		
-		// création d'une couche geoJson qui appelle le fichier "arrondissement.geojson"			
-		var arrondissement = $.getJSON("pnr_perim.geojson",function(dataPnr)
+		// création d'une couche geoJson qui appelle le fichier "pnr_perim.geojson"			
+		var pnr = $.getJSON("pnr_perim.geojson",function(dataPnr)
 					{L.geoJson( dataPnr, 
 						{style: function(feature)
 							{	
-							// paramétrage de la symbologie de la couche "arrondissement"
+							// paramétrage de la symbologie de la couche "pnr"
 							return { color: "#046380", weight: 1, fillColor: '#4BB5C1', fillOpacity: .5 };
 							},
 		onEachFeature: function( feature, layer )
 				{
-				// paramétrage de la popup de la couche "arrondissement"	
+				// paramétrage de la popup de la couche "pnr"	
 				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.c_ar + "<b> communes adhérentes</b>" )
 				}
 		}).addTo(map);
 		});
 															
-		// création d'une couche geoJson qui appelle le fichier "cinema.geojson"													
-		var cinema= $.getJSON("test_point.geojson",function(dataPoint)
+		// création d'une couche geoJson qui appelle le fichier "projet_pat.geojson"													
+		var projets= $.getJSON("test_point.geojson",function(dataPoint)
 										// icone Clap	
-										{var iconeCinema = L.icon({
-													iconUrl: 'style/boussole.png',
+										{var iconeProjet = L.icon({
+													iconUrl: 'style/church1.png',
 													iconSize: [32, 32]
 																	});
-		// fon ction pointToLayer qui ajoute la couche "cinema" à la carte, selon la symbologie "iconeCinema", et paramètre la popup
+		// fonction pointToLayer qui ajoute la couche "projets" à la carte, selon la symbologie "iconeProjet", et paramètre la popup
 		L.geoJson(dataPoint,{
 			pointToLayer: function(feature,latlng){
-				var marker = L.marker(latlng,{icon: iconeCinema});
+				var marker = L.marker(latlng,{icon: iconeProjet});
 				marker.bindPopup('<b><u>Description du point</u></b><br>'
 							   + "<b>Nom : </b>" + feature.properties.id+ '<br>' 
 							   + "<b>Nombre d'écrans : </b>" + feature.properties.ecrans+ '<br>' 
