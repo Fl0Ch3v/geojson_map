@@ -1,6 +1,6 @@
 function initialize() {
 		// création de la carte et paramétrage général : centre et niveau de zoom
-        var map = L.map('mapid').setView([50.102022, 1.825931], 11);
+        var map = L.map('mapid').setView([50.172669, 1.802510], 12);
  
 		// création d'une couche "osmLayer"
         var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
@@ -24,7 +24,7 @@ function initialize() {
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "pnr"	
-				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.nb_com + "<b> communes adhérentes</b>" )
+				layer.bindPopup( "<b><u>Parc Naturel Régional</u></b><br><b><u>Baie de Somme - Picaride maritime</u></b><br>" + feature.properties.nb_com + " communes adhérentes<br>" + feature.properties.area_ha + "hectares" )
 				}
 		}).addTo(map);
 		});
@@ -40,7 +40,7 @@ function initialize() {
 		onEachFeature: function( feature, layer )
 				{
 				// paramétrage de la popup de la couche "pah"	
-				layer.bindPopup( "<b><u>Pays d'Art et d'Histoire</u></b><br><b><u>Ponthieu - Baie de Somme</u></b><br>")
+				layer.bindPopup( "<b><u>Pays d'Art et d'Histoire</u></b><br><b><u>Ponthieu - Baie de Somme</u></b>")
 				}
 		}).addTo(map);
 		});
