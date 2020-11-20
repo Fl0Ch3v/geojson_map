@@ -8,10 +8,18 @@ function initialize() {
             maxZoom: 19
         });
 		    
-		// la couche "osmLayer" est ajoutée à la carte		
+		// la couche "osmG2FLayer" est ajoutée à la carte		
         map.addLayer(osmLayer);
+
+		// création d'une couche "osmG2FLayer"
+        var osmG2FLayer = L.tileLayer.wms('https://osm.geo2france.fr/mapproxy/service/', {layers: 'bright',
+            attribution: '© Géo2France et <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        });
+		    
+
 		
-		 
+
 		
 		// création d'une couche geoJson qui appelle le fichier "pnr_perim.geojson"			
 		var pnr = $.getJSON("pnr_perim.geojson",function(dataPnr)
@@ -101,7 +109,7 @@ function initialize() {
 		// création d'un contrôle des couches pour modifier les couches de fond de plan	
 		var baseLayers = {
 			"OpenStreetMap": osmLayer,
-			"Watercolor" : watercolorLayer
+			"OSM_Géo2France" : osmG2FLayer
 		};
 		L.control.layers(baseLayers).addTo(map);
 }
