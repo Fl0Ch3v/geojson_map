@@ -51,7 +51,7 @@ function initialize() {
 						{style: function(feature)
 							{	
 							// paramétrage de la symbologie de la couche "com"
-							return { color: "#6495ED", weight: 1, fillColor: '#6495ED', fillOpacity: .5 };
+							return { color: "#6495ED", weight: 1, fillColor: "#FFFFFF" , fillOpacity: 0 };
 							},
 		onEachFeature: function( feature, layer )
 				{
